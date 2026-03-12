@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击图片</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            max-width: 100%;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .admin-panel {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .admin-panel h3 {
+            margin-top: 0;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .admin-panel input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .admin-panel button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .admin-panel button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>点击图片</h1>
+        
+        <div class="image-container" onclick="window.location.href=document.getElementById('target-link').value">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20landscape%20photo%20with%20mountains%20and%20lake&image_size=landscape_16_9" alt="点击图片跳转">
+        </div>
+        
+        <div class="admin-panel">
+            <h3>设置</h3>
+            <input type="text" id="target-link" value="https://gsdads20260030117lld.plhxoa317820.top/dp2/index.html?channelCode=iabefbcba" placeholder="请输入要跳转的网站链接">
+            <input type="text" id="share-url" value="https://WSL183.github.io" readonly>
+            <button onclick="copyShareUrl()">复制分享链接</button>
+        </div>
+    </div>
+    
+    <script>
+        function copyShareUrl() {
+            const shareUrl = document.getElementById('share-url');
+            shareUrl.select();
+            document.execCommand('copy');
+            alert('分享链接已复制到剪贴板！');
+        }
+    </script>
+</body>
+</html>
